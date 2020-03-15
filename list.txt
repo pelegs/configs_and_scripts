@@ -1,0 +1,26 @@
+# Programs to install
+vim
+vim-gtk
+python
+python3
+pip
+pip3
+gnuplot
+i3
+py3status
+xsel
+texlive
+texstudio
+texlive-science
+lm-sensors
+xkblayout-set
+
+# Python libraries
+numpy
+
+# Files to copy
+.bashrc
+.vimrc
+jellybeans
+python.vim
+i3 files
