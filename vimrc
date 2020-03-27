@@ -27,6 +27,7 @@ set cursorline
 autocmd BufEnter *.py set nospell
 autocmd BufEnter *.pyx set nospell
 autocmd BufEnter *.tex set nospell "spelllang=en_us
+"autocmd BufEnter *.tex set tabstop=2 softtabstop=2 shiftwidth=2
 " autocmd BufEnter *.tex colorscheme jellybeans
 colorscheme jellybeans
 
@@ -93,6 +94,7 @@ let g:Tex_Env_answer = "\\if\\withsol1{\<CR>\\begin{answer}\<CR><++>\<CR>\\end{a
 let g:Tex_Env_frame = "\\begin{frame}\<CR>\\frametitle{<++>}\<CR>\\end{frame}"
 let g:Tex_SmartKeyQuote = 0
 let g:Tex_SmartKeyDot = 0
+let g:Tex_Env_tikzinfigure = "\\begin{figure}[H]\<CR>\\centering\<CR>\\begin{tikzpicture}\<CR><++>\<CR>\\end{tikzpicture}\<CR>\\end{figure}"
 
 autocmd FileType tex :setlocal sw=2 ts=2 sts=2
 
