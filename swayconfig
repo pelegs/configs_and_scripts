@@ -223,12 +223,12 @@ bindsym $mod+Shift+p exec "cat /dev/urandom | tr -dc '0-9a-zA-Z!@#$%^&*()_+-=' |
 bindsym $mod+Shift+s exec "grim /home/$USER/Pictures/screenshots/screenshot_$(date +%Y%m%d%H%M%S).png"
 
 # Change screen brightness
-bindsym $mod+F11 exec "/home/$USER/scripts/scr_brightness.py -10"
-bindsym $mod+F12 exec "/home/$USER/scripts/scr_brightness.py +10"
+bindsym XF86MonBrightnessDown exec "/home/$USER/scripts/scr_brightness.py -10"
+bindsym XF86MonBrightnessUp   exec "/home/$USER/scripts/scr_brightness.py +10"
 
 # Volume?
-bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
 bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 
 #
