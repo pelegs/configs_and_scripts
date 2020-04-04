@@ -226,10 +226,13 @@ bindsym $mod+Shift+s exec "grim /home/$USER/Pictures/screenshots/screenshot_$(da
 bindsym XF86MonBrightnessDown exec "/home/$USER/scripts/scr_brightness.py -10"
 bindsym XF86MonBrightnessUp   exec "/home/$USER/scripts/scr_brightness.py +10"
 
-# Volume?
+# Volume
 bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
 bindsym XF86AudioMute exec "amixer set Master toggle"
+
+# Daaamnn
+bindsym $mod+F7 exec "mplayer /home/pelegs/sounds/daaaamn.mp3"
 
 #
 # Status Bar:

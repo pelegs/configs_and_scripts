@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible			  " be iMproved, required
+filetype off				  " required
 
 execute pathogen#infect()
 syntax on
@@ -7,10 +7,9 @@ syntax on
 
 " Vim-LaTeX stuff
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
+filetype on
+filetype plugin on " This enables automatic indentation as you type.
+filetype indent on " file type based indentationiletype plugin on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -22,7 +21,7 @@ set t_Co=256 " <-- apparantly only for Vim <= 7?
 "set termguicolors
 
 let python_highlight_all=1
-syntax enable           " enable syntax processing
+syntax enable			" enable syntax processing
 set cursorline
 autocmd BufEnter *.py set nospell
 autocmd BufEnter *.pyx set nospell
@@ -44,10 +43,10 @@ set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 autocmd! bufreadpost * set noexpandtab | retab! 4
 
 " convert tabs to spaces before writing file
-autocmd! bufwritepre * set expandtab | retab! 4
-
-" convert spaces to tabs after writing file (to show guides again)
-autocmd! bufwritepost * set noexpandtab | retab! 4
+"autocmd! bufwritepre * set expandtab | retab! 4
+"
+"" convert spaces to tabs after writing file (to show guides again)
+"autocmd! bufwritepost * set noexpandtab | retab! 4
 
 " stricter rules for C programs
 set cindent
@@ -58,32 +57,35 @@ set cursorcolumn cursorline
 " set relative line numbers
 set relativenumber
 
+" For makefiles
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
 imap <f12> <c-o>:call ToggleHebrew()<cr>
 map <f12> :call ToggleHebrew()<cr>
 
 func! ToggleHebrew()
   if &rl
-    set norl
-    set keymap=
+	set norl
+	set keymap=
   else
-    set rl
-    set keymap=hebrew
+	set rl
+	set keymap=hebrew
   end
 endfunc
 
 autocmd FileType python setlocal tabstop=4 colorcolumn=79
 
-set number          " show line numbers
-set showcmd         " show command in bottom bar
-set cursorline      " highlight current line
-set wildmenu        " visual autocomplete for command menu
-set lazyredraw      " redraw only when we need to.
-set showmatch       " highlight matching [{()}]
-set incsearch       " search as characters are entered
-set hlsearch        " highlight matches
-"set paste           " paste normaly
-set foldenable      " enable folding
-set foldnestmax=10  " 10 nested fold max
+set number			" show line numbers
+set showcmd			" show command in bottom bar
+set cursorline		" highlight current line
+set wildmenu		" visual autocomplete for command menu
+set lazyredraw		" redraw only when we need to.
+set showmatch		" highlight matching [{()}]
+set incsearch		" search as characters are entered
+set hlsearch		" highlight matches
+"set paste			 " paste normaly
+set foldenable		" enable folding
+set foldnestmax=10	" 10 nested fold max
 nnoremap <space> za " space open/closes folds
 
 nnoremap B ^
