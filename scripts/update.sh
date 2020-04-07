@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-yes | sudo apt update
-yes | sudo apt upgrade
-yes | sudo apt dist-upgrade
-
+sudo pacman -Syu
 i3 restart
