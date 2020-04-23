@@ -1,5 +1,5 @@
-set nocompatible			  " be iMproved, required
-filetype off				  " required
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 execute pathogen#infect()
 syntax on
@@ -21,13 +21,8 @@ set t_Co=256 " <-- apparantly only for Vim <= 7?
 "set termguicolors
 
 let python_highlight_all=1
-syntax enable			" enable syntax processing
+syntax enable           " enable syntax processing
 set cursorline
-autocmd BufEnter *.py set nospell
-autocmd BufEnter *.pyx set nospell
-autocmd BufEnter *.tex set nospell "spelllang=en_us
-"autocmd BufEnter *.tex set tabstop=2 softtabstop=2 shiftwidth=2
-" autocmd BufEnter *.tex colorscheme jellybeans
 colorscheme jellybeans
 
 " set auto and smart indentation
@@ -41,12 +36,15 @@ set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
 " convert spaces to tabs when reading file
 autocmd! bufreadpost * set noexpandtab | retab! 4
+autocmd! bufreadpost *.tex set noexpandtab | retab! 2
 
 " convert tabs to spaces before writing file
-"autocmd! bufwritepre * set expandtab | retab! 4
-"
-"" convert spaces to tabs after writing file (to show guides again)
-"autocmd! bufwritepost * set noexpandtab | retab! 4
+autocmd! bufwritepre * set expandtab | retab! 4
+autocmd! bufwritepre *.tex set expandtab | retab! 2
+
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4
+autocmd! bufwritepost *.tex set noexpandtab | retab! 2
 
 " stricter rules for C programs
 set cindent
@@ -57,35 +55,38 @@ set cursorcolumn cursorline
 " set relative line numbers
 set relativenumber
 
-" For makefiles
+" specific file types
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+autocmd BufEnter *.py set nospell
+autocmd BufEnter *.pyx set nospell
+autocmd BufEnter *.tex set nospell tabstop=2 softtabstop=2 shiftwidth=2
 
 imap <f12> <c-o>:call ToggleHebrew()<cr>
 map <f12> :call ToggleHebrew()<cr>
 
 func! ToggleHebrew()
   if &rl
-	set norl
-	set keymap=
+    set norl
+    set keymap=
   else
-	set rl
-	set keymap=hebrew
+    set rl
+    set keymap=hebrew
   end
 endfunc
 
 autocmd FileType python setlocal tabstop=4 colorcolumn=79
 
-set number			" show line numbers
-set showcmd			" show command in bottom bar
-set cursorline		" highlight current line
-set wildmenu		" visual autocomplete for command menu
-set lazyredraw		" redraw only when we need to.
-set showmatch		" highlight matching [{()}]
-set incsearch		" search as characters are entered
-set hlsearch		" highlight matches
-"set paste			 " paste normaly
-set foldenable		" enable folding
-set foldnestmax=10	" 10 nested fold max
+set number          " show line numbers
+set showcmd         " show command in bottom bar
+set cursorline      " highlight current line
+set wildmenu        " visual autocomplete for command menu
+set lazyredraw      " redraw only when we need to.
+set showmatch       " highlight matching [{()}]
+set incsearch       " search as characters are entered
+set hlsearch        " highlight matches
+"set paste           " paste normaly
+set foldenable      " enable folding
+set foldnestmax=10  " 10 nested fold max
 nnoremap <space> za " space open/closes folds
 
 nnoremap B ^

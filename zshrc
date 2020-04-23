@@ -75,9 +75,9 @@ zmodload zsh/mathfunc
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-         zsh-syntax-highlighting
-         zsh-autosuggestions
-     )
+		 zsh-syntax-highlighting
+		 zsh-autosuggestions
+	 )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,9 +91,9 @@ export PATH=/home/$USER/scripts:/home/$USER/.local/bin:/usr/local/texlive/2019/b
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#	export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#	export EDITOR='mvim'
 # fi
 
 # Vim mode
@@ -140,4 +140,4 @@ source /home/$USER/Downloads/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias pinst='sudo pacman -S'
 
 # Git symlink
-alias git="LD_PRELOAD=/home/pelegs/bin/gitbslr.so git"
+#alias git="LD_PRELOAD=/home/pelegs/bin/gitbslr.so git"
