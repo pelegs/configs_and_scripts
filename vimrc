@@ -34,17 +34,10 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 " display indentation guides
 set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
-" convert spaces to tabs when reading file
-autocmd! bufreadpost * set noexpandtab | retab! 4
-autocmd! bufreadpost *.tex set noexpandtab | retab! 2
-
-" convert tabs to spaces before writing file
-autocmd! bufwritepre * set expandtab | retab! 4
-autocmd! bufwritepre *.tex set expandtab | retab! 2
-
-" convert spaces to tabs after writing file (to show guides again)
-autocmd! bufwritepost * set noexpandtab | retab! 4
-autocmd! bufwritepost *.tex set noexpandtab | retab! 2
+" specific file types
+autocmd FileType make setlocal nospell noexpandtab shiftwidth=8 softtabstop=0
+autocmd FileType python setlocal nospell tabstop=4 colorcolumn=79
+autocmd BufEnter *.tex set nospell tabstop=2 softtabstop=2 shiftwidth=2
 
 " stricter rules for C programs
 set cindent
@@ -54,12 +47,6 @@ set cursorcolumn cursorline
 
 " set relative line numbers
 set relativenumber
-
-" specific file types
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
-autocmd BufEnter *.py set nospell
-autocmd BufEnter *.pyx set nospell
-autocmd BufEnter *.tex set nospell tabstop=2 softtabstop=2 shiftwidth=2
 
 imap <f12> <c-o>:call ToggleHebrew()<cr>
 map <f12> :call ToggleHebrew()<cr>
@@ -73,8 +60,6 @@ func! ToggleHebrew()
     set keymap=hebrew
   end
 endfunc
-
-autocmd FileType python setlocal tabstop=4 colorcolumn=79
 
 set number          " show line numbers
 set showcmd         " show command in bottom bar
