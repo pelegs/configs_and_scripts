@@ -241,6 +241,9 @@ bindsym $mod+F7 exec "mplayer /home/pelegs/sounds/daaaamn.mp3"
 # It's a trap!
 bindsym $mod+F6 exec "mplayer /home/pelegs/sounds/itsatrap.mp3"
 
+# Laugh track
+bindsym $mod+F5 exec "/home/pelegs/scripts/laugh.sh"
+
 #
 # Status Bar:
 #

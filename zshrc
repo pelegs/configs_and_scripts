@@ -140,4 +140,7 @@ source /home/$USER/Downloads/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias pinst='sudo pacman -S'
 
 # Git symlink
-#alias git="LD_PRELOAD=/home/pelegs/bin/gitbslr.so git"
+alias git="LD_PRELOAD=/home/pelegs/bin/gitbslr.so git"
+
+# Update
+alias update='/home/pelegs/scripts/update.sh'
